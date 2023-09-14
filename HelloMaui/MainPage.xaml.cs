@@ -1,0 +1,22 @@
+﻿namespace HelloMaui
+{
+    public partial class MainPage : ContentPage
+    {
+        int count = 0;
+
+        public MainPage()
+        {
+            InitializeComponent();
+        }
+
+        private void OnCounterClicked(object sender, EventArgs e)
+        {
+            count += 10;
+
+            CounterBtn.Text =
+                $"Clicked {count} time{(count == 1 ? string.Empty : "s")}!";
+
+            SemanticScreenReader.Announce(CounterBtn.Text);
+        }
+    }
+}
